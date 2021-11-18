@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
@@ -29,7 +30,17 @@ fun PantallaLogin(
     ) {
         Text(
             text = "Sistecrédito",
-            style = androidx.compose.ui.text.TextStyle(color = Color.White, fontSize = 42.sp, fontWeight = FontWeight.Black)
+            style = TextStyle(color = Color.White, fontSize = 42.sp, fontWeight = FontWeight.Black)
+        )
+        Text(
+            modifier = Modifier
+                .padding(start = 60.dp),
+            text = "lo hacemos posible",
+            style = TextStyle(
+                color = Color.White,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Black
+            )
         )
     }
 
@@ -55,16 +66,19 @@ fun PantallaLogin(
             ) {
 
 
-
                 Column(
-                    modifier = Modifier.fillMaxWidth(),
+                    modifier = Modifier
+                        .fillMaxWidth(),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    TextField(
-                        value = "textValue",
-                        onValueChange = { it },
-                        label = { Text("Introducir Texto") }
-                    )
+                    Row() {
+                        TextField(
+                            value = "Crear una cuenta",
+                            onValueChange = { it },
+                            label = {}
+                        )
+                    }
+
 
                 }
 
@@ -96,13 +110,13 @@ fun PantallaLogin(
                     text = "Already have a account?",
                     fontSize = 15.sp,
                     color = Color.Gray,
-                    )
+                )
 
             }
 
         }
     }
-    }
+}
 
 @Preview
 @Composable
