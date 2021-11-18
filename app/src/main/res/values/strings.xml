@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">OnBoarding</string>
+
+    <string name="onBoardingTitle1">Solicita tu cupo ya</string>
+    <string name="onBoardingText1">You are not alone. You have unique \n ability to go to another world</string>
+
+    <string name="onBoardingTitle2">Gestiona tus créditos</string>
+    <string name="onBoardingText2">In daily lives, we often rush our tasks \n trying get them finish</string>
+
+    <string name="onBoardingTitle3">Compra sin interés</string>
+    <string name="onBoardingText3">Most beginner producers learn make \n creating by simple beats</string>
+
+</resources>
