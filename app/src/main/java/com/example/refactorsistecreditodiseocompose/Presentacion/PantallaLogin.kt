@@ -85,6 +85,12 @@ fun PantallaLogin(
                         fontSize = 20.sp,
                         color = Color.White
                     )
+
+                    Text(
+                        text = "PruebaGit",
+                        fontSize = 20.sp,
+                        color = Color.White
+                    )
                 }
                 //BOTON GOOGLE
                 Spacer(
