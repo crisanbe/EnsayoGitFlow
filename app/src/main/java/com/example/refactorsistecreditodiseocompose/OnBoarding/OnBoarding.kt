@@ -77,52 +77,60 @@ fun onBoarding(
 
         }
 
-        if (state.currentPage == 2) {//pagina == a la posicion 2
-            Button(
-                modifier = Modifier
-                    .offset(x = 210.dp, y = (-25).dp),
-                onClick = {
-                    PantallaLogin()
-                    Toast.makeText(context, "Start Login", Toast.LENGTH_SHORT).show()
-                },
-                shape = RoundedCornerShape(10.dp)
-            ) {
-                Text(
-                    text = "Empezar",
-                    modifier = Modifier.padding(
-                        vertical = 15.dp,
-                        horizontal = 40.dp
-                    )
-                )
+        Box(
+        ) {
+                if (state.currentPage == 2) {//pagina == a la posicion 2
+                    Button(
+                        modifier = Modifier
+                            .offset(x = 205.dp, y = (-21).dp),
+                        onClick = {
+                            PantallaLogin()
+                            Toast.makeText(context, "Start Login", Toast.LENGTH_SHORT).show()
+                        },
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+                        Text(
+                            text = "Empezar",
+                            modifier = Modifier.padding(
+                                vertical = 15.dp,
+                                horizontal = 43.dp
+                            )
+                        )
+                    }
+
+                } else if (state.currentPage == 0) {
+                    Button(
+                        modifier = Modifier
+                            .offset(x = 20.dp, y = (-60).dp),
+                        onClick = { PantallaLogin() },
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.textButtonColors(
+                            backgroundColor = Color.White
+                        )
+                    ) {
+                        Text(
+                            text = "Omitir",
+                            modifier = Modifier
+                                .padding(
+                                    vertical = 15.dp,
+                                    horizontal = 45.dp
+                                )
+                                .clickable {
+                                    PantallaLogin()
+                                    Toast
+                                        .makeText(
+                                            context,
+                                            "Start Inicio Sesión",
+                                            Toast.LENGTH_SHORT
+                                        )
+                                        .show()
+                                },
+                            color = MaterialTheme.colors.background,
+                        )
+                    }
+                }
             }
 
-        } else if (state.currentPage == 0) {
-            Button(
-                modifier = Modifier
-                    .offset(x = 20.dp, y = (-60).dp),
-                onClick = {PantallaLogin()},
-                shape = RoundedCornerShape(10.dp),
-                colors = ButtonDefaults.textButtonColors(
-                    backgroundColor = Color.White
-                )
-            ) {
-                Text(
-                    text = "Omitir",
-                    modifier = Modifier
-                        .padding(
-                            vertical = 15.dp,
-                            horizontal = 45.dp
-                        )
-                        .clickable {
-                            PantallaLogin()
-                            Toast
-                                .makeText(context, "Start Inicio Sesión", Toast.LENGTH_SHORT)
-                                .show()
-                        },
-                    color = MaterialTheme.colors.background,
-                )
-            }
-        }
     }
 }
 
@@ -195,7 +203,7 @@ fun BottonSection(
             } else if (index == 1)
                 Button(
                     modifier = Modifier
-                        .offset(x = 170.dp, y = 138.dp)
+                        .offset(x = 170.dp, y = 130.dp)
                         .padding(bottom = 20.dp),
                     onClick = onNextClicked,
                     shape = RoundedCornerShape(10.dp)
@@ -244,7 +252,7 @@ fun BottonSectionAtras(
             if (index == 1) {//pagina == a la posicion 1
                 Button(
                     modifier = Modifier
-                        .offset(x = (-20).dp, y = 0.dp),
+                        .offset(x = (-15).dp, y = (-5).dp),
                     onClick = onNextClickedAtras,
                     shape = RoundedCornerShape(10.dp),
                     colors = ButtonDefaults.textButtonColors(
@@ -256,7 +264,7 @@ fun BottonSectionAtras(
                         modifier = Modifier
                             .padding(
                                 vertical = 15.dp,
-                                horizontal = 50.dp
+                                horizontal = 49.dp
                             )
                             .clickable {
 
@@ -268,7 +276,7 @@ fun BottonSectionAtras(
             } else if (index == 2) {//pagina == a la posicion 1
                 Button(
                     modifier = Modifier
-                        .offset(x = (-110).dp, y = 77.dp),
+                        .offset(x = (-110).dp, y = 81.5.dp),
                     onClick = onNextClickedAtras,
                     shape = RoundedCornerShape(10.dp),
                     colors = ButtonDefaults.textButtonColors(
@@ -280,7 +288,7 @@ fun BottonSectionAtras(
                         modifier = Modifier
                             .padding(
                                 vertical = 15.dp,
-                                horizontal = 45.dp
+                                horizontal = 49.dp
                             )
                             .clickable {
                                 onNextClickedAtras
@@ -303,7 +311,7 @@ fun Indicators(size: Int, index: Int) {
 
     Row(
         horizontalArrangement = Arrangement.SpaceBetween,
-        modifier = Modifier.padding(start = 180.dp, top = 0.dp)
+        modifier = Modifier.padding(start = 160.dp, top = 0.dp)
     ) {
         repeat(size) {
             Indicator(isSelectec = it == index)
@@ -327,7 +335,7 @@ fun Indicator(isSelectec: Boolean) {
             .clip(CircleShape)
             .background(
                 if (isSelectec) Color.Green
-                else Color.Gray.copy(alpha = 0.5f)
+                else Color.White.copy(alpha = 0.5f)
             )
     ) {
 

@@ -1,9 +1,14 @@
 package com.example.refactorsistecreditodiseocompose.Presentacion
 
+import android.widget.Toast
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.KeyboardArrowLeft
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -16,6 +21,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.refactorsistecreditodiseocompose.R
 
 
 @Composable
@@ -24,7 +30,7 @@ fun PantallaLogin(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(top = 180.dp),
+            .padding(top = 140.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -47,76 +53,102 @@ fun PantallaLogin(
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.BottomCenter
-    )
-    {
+    ) {
         Column(
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-                .fillMaxWidth()
-                .fillMaxHeight(0.60f)
-                .padding(10.dp)
+                .align(alignment = Alignment.Center)
+                .padding(top = 250.dp),
         ) {
-
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
+            Button(
+                onClick = {},
+                shape = RoundedCornerShape(10.dp)
             ) {
-
-
-                Column(
-                    modifier = Modifier
-                        .fillMaxWidth(),
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Row() {
-                        TextField(
-                            value = "Crear una cuenta",
-                            onValueChange = { it },
-                            label = {}
-                        )
-                    }
-
-
-                }
-
-                //BOTON LOGIN
-                Spacer(
-                    modifier = Modifier
-                        .padding(20.dp)
+                Text(
+                    text = "Ingresa ahora",
+                    modifier = Modifier.padding(
+                        vertical = 15.dp,
+                        horizontal = 110.dp
+                    )
                 )
-                IconButton(
-                    onClick = {},
-                    modifier = Modifier
-                        .clip(CircleShape)
-                        .fillMaxWidth(0.8f)
-                        .height(50.dp)
+            }
+            Spacer(modifier = Modifier.padding(bottom = 25.dp))
+
+            Row() {
+                Button(
+                    onClick = { },
+                    shape = RoundedCornerShape(10.dp),
+                    colors = ButtonDefaults.textButtonColors(
+                        backgroundColor = Color.White
+                    )
                 ) {
                     Text(
                         text = "Crear una cuenta",
-                        fontSize = 20.sp,
-                        color = Color.White
+                        modifier = Modifier
+                            .padding(
+                                vertical = 15.dp,
+                                horizontal = 50.dp
+                            ),
+                        color = MaterialTheme.colors.background,
                     )
-                }
-                //BOTON GOOGLE
-                Spacer(
-                    modifier = Modifier
-                        .padding(10.dp)
-                )
 
-                Text(
-                    text = "Already have a account?",
-                    fontSize = 15.sp,
-                    color = Color.Gray,
-                )
+
+                }
+                Spacer(modifier = Modifier.padding(start = 15.dp))
+                Button(
+                    onClick = { },
+                    shape = RoundedCornerShape(10.dp),
+                    colors = ButtonDefaults.textButtonColors(
+                        backgroundColor = Color.White
+                    )
+                ) {
+                    FloatingActionButton(
+                        modifier = Modifier
+                            .padding(
+                                vertical = 0.dp
+                            ),
+                        onClick = { /*TODO*/ },
+                        backgroundColor = Color.Green,
+                        content = {
+                            Icon(
+                                painter = painterResource(id = R.drawable.ic_fingerprint),
+                                contentDescription = null,
+                                tint = Color.White
+                            )
+                        }
+                    )
+
+
+                }
 
             }
 
+
+        }
+
+
+    }
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(12.dp)
+    ) {
+        IconButton(
+            onClick = { },
+            modifier = Modifier.align(Alignment.BottomStart)
+        ) {
+            Icon(Icons.Outlined.KeyboardArrowLeft, null)
+
+        }
+        TextButton(
+            onClick = { },
+            modifier = Modifier.align(Alignment.BottomEnd)
+        ) {
+            Text("Skip", color = MaterialTheme.colors.onBackground)
         }
     }
+
 }
+
 
 @Preview
 @Composable
