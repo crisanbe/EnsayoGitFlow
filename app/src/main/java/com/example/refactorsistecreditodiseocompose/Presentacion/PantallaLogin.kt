@@ -28,7 +28,7 @@ fun PantallaLogin(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Sistecrédito",
+            text = "SisteFlast",
             style = androidx.compose.ui.text.TextStyle(color = Color.White, fontSize = 42.sp, fontWeight = FontWeight.Black)
         )
     }
@@ -68,7 +68,6 @@ fun PantallaLogin(
 
                 }
 
-                //BOTON LOGIN
                 Spacer(
                     modifier = Modifier
                         .padding(20.dp)
