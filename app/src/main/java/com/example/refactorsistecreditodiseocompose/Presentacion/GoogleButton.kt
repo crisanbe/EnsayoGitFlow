@@ -19,11 +19,10 @@ import com.example.refactorsistecreditodiseocompose.ui.theme.Shapes
 @Composable
 fun GoogleButton(
     modifier: Modifier = Modifier,
-    text: String = "Sign Up with Google",
+    textGoogle: String = "Sign Up with Google",
     loadingText: String = "Creating Account...",
     icon: Int = R.drawable.ic_google_logo_foreground,
     shape: Shape = Shapes.medium,
-    borderColor: Color = Color.LightGray,
     backgroundColor: Color = MaterialTheme.colors.surface,
     progressIndicatorColor: Color = MaterialTheme.colors.primary,
     onClicked: () -> Unit
@@ -34,7 +33,7 @@ fun GoogleButton(
         modifier = modifier
             .clickable { clicked = !clicked },
         shape = shape,
-        border = BorderStroke(width = 1.dp, color = borderColor),
+        border = BorderStroke(width = 1.dp, color = Color.LightGray),
         color = backgroundColor
     ) {
         Row(
@@ -45,8 +44,7 @@ fun GoogleButton(
                     end = 16.dp,
                     top = 12.dp,
                     bottom = 12.dp,
-
-                )
+                    )
                 .animateContentSize(
                     animationSpec = tween(
                         durationMillis = 300,
@@ -62,7 +60,7 @@ fun GoogleButton(
                 tint = Color.Unspecified
             )
             Spacer(modifier = Modifier.width(8.dp))
-            Text(text = if (clicked) loadingText else text)
+            Text(text = if (clicked) loadingText else textGoogle)
             if (clicked) {
                 Spacer(modifier = Modifier.width(16.dp))
                 CircularProgressIndicator(
@@ -82,7 +80,7 @@ fun GoogleButton(
 @Preview
 private fun GoogleButtonPreview() {
     GoogleButton(
-        text = "Sign Up with Google",
+        textGoogle = "Sign Up with Google",
         loadingText = "Creating Account...",
         onClicked = {}
     )

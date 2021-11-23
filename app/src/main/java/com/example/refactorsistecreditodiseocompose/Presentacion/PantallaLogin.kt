@@ -10,11 +10,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.refactorsistecreditodiseocompose.R
 import com.example.refactorsistecreditodiseocompose.ui.theme.FACEBOOKCOLOR
 
 
@@ -29,13 +31,13 @@ fun PantallaLogin(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Sistecrédito",
+            text = stringResource(R.string.Siste),
             style = TextStyle(color = Color.White, fontSize = 42.sp, fontWeight = FontWeight.Black)
         )
         Text(
             modifier = Modifier
                 .padding(start = 60.dp),
-            text = "lo hacemos posible",
+            text = stringResource(R.string.lo_hacemos_posible),
             style = TextStyle(
                 color = Color.White,
                 fontSize = 18.sp,
@@ -58,7 +60,7 @@ fun PantallaLogin(
                 shape = RoundedCornerShape(10.dp)
             ) {
                 Text(
-                    text = "Ingresa ahora",
+                    text = stringResource(R.string.BtnIngresa),
                     modifier = Modifier.padding(
                         vertical = 15.dp,
                         horizontal = 110.dp
@@ -77,7 +79,7 @@ fun PantallaLogin(
                     )
                 ) {
                     Text(
-                        text = "Crear una cuenta",
+                        text = stringResource(R.string.Crearcuenta),
                         modifier = Modifier
                             .padding(
                                 vertical = 15.dp,
@@ -94,7 +96,7 @@ fun PantallaLogin(
                 .fillMaxWidth()
                 .offset(y = (-70).dp)
                 .padding(50.dp)
-        ){ }
+        ) { }
 
         Spacer(modifier = Modifier.height(16.dp))
 
@@ -104,15 +106,10 @@ fun PantallaLogin(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             SocialMediaButton(
-                text = "Login with Facebook",
+                text = stringResource(R.string.Facebook),
                 onClick = { },
                 socialMediaColor = FACEBOOKCOLOR
             )
-            /* SocialMediaButton(
-                text = "Login with Gogle",
-                onClick = { },
-                socialMediaColor = GMAILCOLOR
-            )*/
         }
     }
 
