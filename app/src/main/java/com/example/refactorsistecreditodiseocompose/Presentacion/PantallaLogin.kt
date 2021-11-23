@@ -22,6 +22,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.refactorsistecreditodiseocompose.R
+import com.example.refactorsistecreditodiseocompose.ui.theme.FACEBOOKCOLOR
+import com.example.refactorsistecreditodiseocompose.ui.theme.GMAILCOLOR
 
 
 @Composable
@@ -71,7 +73,7 @@ fun PantallaLogin(
                     )
                 )
             }
-            Spacer(modifier = Modifier.padding(bottom = 25.dp))
+            Spacer(modifier = Modifier.padding(bottom = 22.dp))
 
             Row() {
                 Button(
@@ -86,47 +88,43 @@ fun PantallaLogin(
                         modifier = Modifier
                             .padding(
                                 vertical = 15.dp,
-                                horizontal = 50.dp
+                                horizontal = 99.dp
                             ),
                         color = MaterialTheme.colors.background,
                     )
 
-
-                }
-                Spacer(modifier = Modifier.padding(start = 15.dp))
-                Button(
-                    onClick = { },
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.textButtonColors(
-                        backgroundColor = Color.White
-                    )
-                ) {
-                    FloatingActionButton(
-                        modifier = Modifier
-                            .padding(
-                                vertical = 0.dp
-                            ),
-                        onClick = { /*TODO*/ },
-                        backgroundColor = Color.Green,
-                        content = {
-                            Icon(
-                                painter = painterResource(id = R.drawable.ic_fingerprint),
-                                contentDescription = null,
-                                tint = Color.White
-                            )
-                        }
-                    )
 
 
                 }
 
             }
 
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ){
+            SocialMediaButton(
+                text = "Login with Facebook",
+                onClick = {  },
+                socialMediaColor = FACEBOOKCOLOR
+            )
+
+           /* SocialMediaButton(
+                text = "Login with Gogle",
+                onClick = { },
+                socialMediaColor = GMAILCOLOR
+            )*/
+        }
 
         }
 
 
-    }
+
     Box(
         modifier = Modifier
             .fillMaxSize()

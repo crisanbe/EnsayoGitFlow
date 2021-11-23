@@ -10,3 +10,8 @@ val Teal200 = Color(0xFF03DAC5)
 
 val Gray200 = Color(0xFF007AA4)
 val Gray201 = Color(0xFF007AA4)
+/*
+    SOCIAL MEDIA COLORS
+ */
+val FACEBOOKCOLOR = Color(0xFFFAFAFA)
+val GMAILCOLOR = Color(0xFFDB4437)
