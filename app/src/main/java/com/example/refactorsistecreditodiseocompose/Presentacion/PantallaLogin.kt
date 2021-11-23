@@ -1,5 +1,6 @@
 package com.example.refactorsistecreditodiseocompose.Presentacion
 
+import GoogleButton
 import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -86,47 +87,31 @@ fun PantallaLogin(
                         modifier = Modifier
                             .padding(
                                 vertical = 15.dp,
-                                horizontal = 50.dp
+                                horizontal = 99.dp
                             ),
                         color = MaterialTheme.colors.background,
                     )
 
 
                 }
-                Spacer(modifier = Modifier.padding(start = 15.dp))
-                Button(
-                    onClick = { },
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.textButtonColors(
-                        backgroundColor = Color.White
-                    )
-                ) {
-                    FloatingActionButton(
-                        modifier = Modifier
-                            .padding(
-                                vertical = 0.dp
-                            ),
-                        onClick = { /*TODO*/ },
-                        backgroundColor = Color.Green,
-                        content = {
-                            Icon(
-                                painter = painterResource(id = R.drawable.ic_fingerprint),
-                                contentDescription = null,
-                                tint = Color.White
-                            )
-                        }
-                    )
 
-
-                }
 
             }
+            Spacer(modifier = Modifier.height(10.dp))
 
 
         }
 
+        GoogleButton(
+            modifier = Modifier.fillMaxWidth()
+                .offset(y= (-70).dp)
+                .padding(50.dp)
+        ) {
+
+        }
 
     }
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -146,9 +131,7 @@ fun PantallaLogin(
             Text("Skip", color = MaterialTheme.colors.onBackground)
         }
     }
-
 }
-
 
 @Preview
 @Composable
