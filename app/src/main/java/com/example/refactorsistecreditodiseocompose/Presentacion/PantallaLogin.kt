@@ -1,28 +1,21 @@
 package com.example.refactorsistecreditodiseocompose.Presentacion
 
 import GoogleButton
-import android.widget.Toast
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.KeyboardArrowLeft
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.refactorsistecreditodiseocompose.R
+import com.example.refactorsistecreditodiseocompose.ui.theme.FACEBOOKCOLOR
 
 
 @Composable
@@ -72,7 +65,8 @@ fun PantallaLogin(
                     )
                 )
             }
-            Spacer(modifier = Modifier.padding(bottom = 25.dp))
+
+            Spacer(modifier = Modifier.padding(bottom = 22.dp))
 
             Row() {
                 Button(
@@ -91,26 +85,38 @@ fun PantallaLogin(
                             ),
                         color = MaterialTheme.colors.background,
                     )
-
-
                 }
-
-
             }
-            Spacer(modifier = Modifier.height(10.dp))
-
-
         }
 
         GoogleButton(
-            modifier = Modifier.fillMaxWidth()
-                .offset(y= (-70).dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .offset(y = (-70).dp)
                 .padding(50.dp)
+        ){ }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-
+            SocialMediaButton(
+                text = "Login with Facebook",
+                onClick = { },
+                socialMediaColor = FACEBOOKCOLOR
+            )
+            /* SocialMediaButton(
+                text = "Login with Gogle",
+                onClick = { },
+                socialMediaColor = GMAILCOLOR
+            )*/
         }
-
     }
+
+    Spacer(modifier = Modifier.height(10.dp))
 
     Box(
         modifier = Modifier
