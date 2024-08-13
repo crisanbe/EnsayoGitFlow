@@ -1,27 +1,23 @@
 package com.example.refactorsistecreditodiseocompose.Presentacion
 
-import android.widget.Toast
-import androidx.compose.foundation.clickable
+import GoogleButton
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.KeyboardArrowLeft
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.refactorsistecreditodiseocompose.R
+import com.example.refactorsistecreditodiseocompose.ui.theme.FACEBOOKCOLOR
 
 
 @Composable
@@ -35,13 +31,13 @@ fun PantallaLogin(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Sistecrédito",
+            text = stringResource(R.string.Siste),
             style = TextStyle(color = Color.White, fontSize = 42.sp, fontWeight = FontWeight.Black)
         )
         Text(
             modifier = Modifier
                 .padding(start = 60.dp),
-            text = "lo hacemos posible",
+            text = stringResource(R.string.lo_hacemos_posible),
             style = TextStyle(
                 color = Color.White,
                 fontSize = 18.sp,
@@ -64,14 +60,15 @@ fun PantallaLogin(
                 shape = RoundedCornerShape(10.dp)
             ) {
                 Text(
-                    text = "Ingresa ahora",
+                    text = stringResource(R.string.BtnIngresa),
                     modifier = Modifier.padding(
                         vertical = 15.dp,
                         horizontal = 110.dp
                     )
                 )
             }
-            Spacer(modifier = Modifier.padding(bottom = 25.dp))
+
+            Spacer(modifier = Modifier.padding(bottom = 22.dp))
 
             Row() {
                 Button(
@@ -82,51 +79,42 @@ fun PantallaLogin(
                     )
                 ) {
                     Text(
-                        text = "Crear una cuenta",
+                        text = stringResource(R.string.Crearcuenta),
                         modifier = Modifier
                             .padding(
                                 vertical = 15.dp,
-                                horizontal = 50.dp
+                                horizontal = 99.dp
                             ),
                         color = MaterialTheme.colors.background,
                     )
-
-
                 }
-                Spacer(modifier = Modifier.padding(start = 15.dp))
-                Button(
-                    onClick = { },
-                    shape = RoundedCornerShape(10.dp),
-                    colors = ButtonDefaults.textButtonColors(
-                        backgroundColor = Color.White
-                    )
-                ) {
-                    FloatingActionButton(
-                        modifier = Modifier
-                            .padding(
-                                vertical = 0.dp
-                            ),
-                        onClick = { /*TODO*/ },
-                        backgroundColor = Color.Green,
-                        content = {
-                            Icon(
-                                painter = painterResource(id = R.drawable.ic_fingerprint),
-                                contentDescription = null,
-                                tint = Color.White
-                            )
-                        }
-                    )
-
-
-                }
-
             }
-
-
         }
 
+        GoogleButton(
+            modifier = Modifier
+                .fillMaxWidth()
+                .offset(y = (-70).dp)
+                .padding(50.dp)
+        ) { }
 
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            SocialMediaButton(
+                text = stringResource(R.string.Facebook),
+                onClick = { },
+                socialMediaColor = FACEBOOKCOLOR
+            )
+        }
     }
+
+    Spacer(modifier = Modifier.height(10.dp))
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -146,9 +134,7 @@ fun PantallaLogin(
             Text("Skip", color = MaterialTheme.colors.onBackground)
         }
     }
-
 }
-
 
 @Preview
 @Composable
